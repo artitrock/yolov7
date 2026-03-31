@@ -1,7 +1,12 @@
+import os
+os.environ['WANDB_DISABLED'] = 'true'
+os.environ['WANDB_MODE'] = 'disabled'
+
 import argparse
 import logging
 import math
-import os
+# import os
+
 import random
 import time
 from copy import deepcopy
@@ -34,8 +39,6 @@ from utils.loss import ComputeLoss, ComputeLossOTA
 from utils.plots import plot_images, plot_labels, plot_results, plot_evolution
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first, is_parallel
 from utils.wandb_logging.wandb_utils import WandbLogger, check_wandb_resume
-
-os.environ['WANDB_DISABLED'] = 'true'
 
 logger = logging.getLogger(__name__)
 
